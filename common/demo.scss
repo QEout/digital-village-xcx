@@ -1,0 +1,249 @@
+.u-block{
+	padding: 14px;
+	&__section{
+		margin-bottom:10px;
+	}
+	&__title {
+		margin-top:10px;
+		font-size: 15px;
+		color: $u-content-color;
+		margin-bottom:10px;
+	}
+	&__flex{
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+	}
+}
+
+// 使用了cell组件的icon图片样式
+.u-cell-icon {
+	width: 36rpx;
+	height: 36rpx;
+	margin-right: 8rpx;
+}
+
+.u-page {
+	padding: 15px 15px 40px 15px;
+}
+
+.u-demo-block {
+	flex: 1;
+	margin-bottom: 23px;
+	
+	&__content {
+		@include flex(column);
+	}
+	
+	&__title {
+		font-size: 14px;
+		color: rgb(143, 156, 162);
+		margin-bottom: 8px;
+		@include flex;
+	}
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@for $i from 1 through 10 {
+  .mb-#{$i} {
+    margin-bottom: $i * 4rpx;
+  }
+  .mt-#{$i} {
+    margin-top: $i * 4rpx;
+  }
+  .ml-#{$i} {
+    margin-left: $i * 4rpx;
+  }
+  .mr-#{$i} {
+    margin-right: $i * 4rpx;
+  }
+  .mx-#{$i} {
+    margin-left: $i * 4rpx;
+    margin-right: $i * 4rpx;
+  }
+  .my-#{$i} {
+    margin-top: $i * 4rpx;
+    margin-bottom: $i * 4rpx;
+  }
+  .m-#{$i} {
+    margin: $i * 4rpx;
+  }
+  
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.px-auto {
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.py-auto {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.p-auto {
+  padding: auto;
+}
+
+@for $i from 1 through 10 {
+  .pt-#{$i} {
+    padding-top: $i * 4rpx;
+  }
+  .pb-#{$i} {
+    padding-bottom: $i * 4rpx;
+  }
+  .pl-#{$i} {
+    padding-left: $i * 4rpx;
+  }
+  .pr-#{$i} {
+    padding-right: $i * 4rpx;
+  }
+  .px-#{$i} {
+    padding-left: $i * 4rpx;
+    padding-right: $i * 4rpx;
+  }
+  .py-#{$i} {
+    padding-top: $i * 4rpx;
+    padding-bottom: $i * 4rpx;
+  }
+  .p-#{$i} {
+    padding: $i * 4rpx;
+  }
+}
+
+@for $i from 1 through 10 {
+  .gap-#{$i} {
+    gap: $i * 4rpx;
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.text-sm {
+  font-size: 24rpx;
+}
+
+.text-base {
+  font-size: 28rpx;
+}
+
+.text-lg {
+  font-size: 32rpx;
+}
+
+.text-xl {
+  font-size: 36rpx;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-light {
+  font-weight: lighter;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-gray {
+  color: #666;
+}
+
+.text-low {
+  color: #999;
+}
+
