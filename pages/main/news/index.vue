@@ -31,7 +31,7 @@
     </view>
     <!-- 积分消息 -->
     <view v-if="currentIndex === 1">
-      <view v-if="list.length > 0" style="width: 100%; padding: 20rpx; box-sizing: border-box">
+      <view v-if="scoreList.length > 0" style="width: 100%; padding: 20rpx; box-sizing: border-box">
         <!-- <view class="body_gong" v-for="(item,index) in list" :key="index">
         <view class="fu_title">{{item.title}} </view>
         <u-line margin="20rpx 0rpx"></u-line>
@@ -58,7 +58,7 @@
         </u-list>
         <u-loadmore :status="pagination.hasMore ? 'loading' : 'nomore'"></u-loadmore>
       </view>
-      <view v-if="list.length == 0">
+      <view v-if="(currentIndex === 1 && scoreList.length == 0) || (currentIndex === 0 && list.length == 0)">
         <u-empty
           marginTop="100"
           mode="message"
@@ -113,6 +113,7 @@
             limit: this.pagination.limit
           })
           .then((res) => {
+            console.log(res)
             if (res.data.list.length < this.pagination.limit) {
               this.pagination.hasMore = false
             }

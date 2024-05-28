@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="body_gong" v-if="list" v-for="(o,index) in list" :key="index">
+		<view class="body_gong" v-for="(o,index) in list" :key="index">
 			<view class="">姓名：{{o.name}} </view>
 			<u-line margin="20rpx 0rpx"></u-line>
 			<view class="">车库名称：{{o.dname}} </view>

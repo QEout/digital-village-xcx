@@ -178,14 +178,14 @@
             name: "我的置物",
             icon: "https://shopimges.oss-cn-hangzhou.aliyuncs.com/wuye/xia/zhiwu.png",
             url: "/pages/componentsC/storage/storage"
-          },
-          {
-            name: "投诉建议",
-            icon: "https://shopimges.oss-cn-hangzhou.aliyuncs.com/wuye/xia/jianyi.png",
-            url: "/pages/componentsA/suggestion/list"
           }
         ],
         StatusList: [
+           {
+            name: "数据总览",
+            icon: "https://ys-village.oss-cn-shanghai.aliyuncs.com/xcx/shuju.png",
+            url: "/pages/componentsA/shuju/shuju"
+          },
           {
             name: "维修工单",
             icon: "https://shopimges.oss-cn-hangzhou.aliyuncs.com/wuye/xia/xiu.png",
@@ -194,7 +194,7 @@
           {
             name: "投诉处理",
             icon: "https://shopimges.oss-cn-hangzhou.aliyuncs.com/wuye/xia/jianyi.png",
-            url: "/pages/componentsA/suggestion/gdlist"
+            url: "/pages/main/suggestion/gdlist"
           },
           {
             name: "积分核销",

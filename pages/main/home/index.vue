@@ -1,8 +1,6 @@
 <template>
   <view>
-    <u-swiper :list="list" height="180" :circular="true" radius="0"
-      @click="previewImage"
-    ></u-swiper>
+    <u-swiper :list="list" height="180" :circular="true" radius="0" @click="previewImage"></u-swiper>
     <u-notice-bar
       icon="http://shopimges.oss-cn-hangzhou.aliyuncs.com/wuye/gonggao.png"
       :text="text4"
@@ -87,7 +85,7 @@
         >
       </view>
     </view>
-    <view class="bankuai" style="padding-top:0px;">
+    <view class="bankuai" style="padding-top: 0px">
       <view>
         <view class="hend">
           <u-tabs :list="tablist" keyName="title" @click="clickTab"></u-tabs>
@@ -147,7 +145,6 @@
     onShow() {
       this.gethome()
       this.list = []
-      this.articlelist = 0
       this.page = 1
       this.getlx()
     },
@@ -184,7 +181,7 @@
         uni.$u.http.post("AdminUser/xcxlist", {}).then((res) => {
           this.list2 = res.data
         })
-        uni.$u.http.post("Activity/xcxlist", { lx: 0, page: 1, limit: 10 }).then((res) => {
+        uni.$u.http.post("Activity/xcxlist", { lx: 1, page: 1, limit: 10 }).then((res) => {
           this.huodonglist = res.data
         })
       },
@@ -225,7 +222,6 @@
         uni.$u.http.post("InfoClass/xllist", {}).then((res) => {
           this.tablist = res.data
           this.info_class_id = res.data[0].id
-          this.articlelist = []
           this.xia = 0
           this.page = 1
           this.getArticleList()
@@ -233,7 +229,6 @@
       },
       clickTab(item) {
         this.info_class_id = item.id
-        this.articlelist = []
         this.xia = 0
         this.page = 1
         this.getArticleList()
@@ -242,7 +237,11 @@
         uni.$u.http
           .post("Info/xcxlist", { info_class_id: this.info_class_id, page: this.page, limit: 10 })
           .then((res) => {
-            this.articlelist = this.articlelist.concat(res.data)
+            if (this.page == 1) {
+              this.articlelist = res.data
+            } else {
+              this.articlelist = this.articlelist.concat(res.data)
+            }
             if (res.data.length > 9) {
               this.page = this.page + 1
             } else {
@@ -280,7 +279,6 @@
     height: 120rpx;
     border-radius: 50%;
     object-fit: cover;
-
   }
 
   .person_item_text {

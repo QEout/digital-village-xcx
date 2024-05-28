@@ -78,7 +78,7 @@
       gethome() {
         uni.$u.http
           .post("ScoreRecord/list", {
-            itemid: uni.getStorageSync("userData").workid,
+            itemid: uni.getStorageSync("userData").workinfo.find((item) => item.did==1).id,
             date: this.formatTime,
             page: this.pagination.page,
             limit: this.pagination.limit
